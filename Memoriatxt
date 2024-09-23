@@ -1,0 +1,13 @@
+Cuantizacion se trata de tomar valores de una fuetne analogica, (una secuencia de valores  (necesariamente aleatorios?))
+Y convertirlos a un conjunto de valores reales de tamaño discreto (finito?)
+
+Parece logico considerar que uno toma intervalos con un representante, como elegir los intervalos y os
+representantes son 2 preguntas a responder
+
+Como elegir intervalos dados los representantes:
+Para minimizar el RMS error (solamente?) se puede probar que se logra tomando el mas cercano.
+Esta minimizacion no depende de la distribucion de probabilidad de la fuente, ya que se estan cuantizando valores que entrego la fuente, por lo que se busca la mejor representacion de ese valor ya existente.
+
+
+
+Fuente analogica:
