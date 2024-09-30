@@ -51,8 +51,8 @@ $$E = -\sum_n^{N´} Pr(A_n)\log Pr(A_n) $$
 Ademas:
 $$ Pr(A_j) >  Pr(A_{jr}) $$
 $$ -\log Pr(A_j) < -\log   Pr(A_{jr}) $$
-Y aun mas:
-$$ -\log Pr(A_j) < \sum_r^R - Pr(A_jr)\log   Pr(A_{jr}) $$
+Dado que $Pr(A_j) = \sum_r^R Pr(A_{jr})$ y tomamos como cota inferior de $\sum_r^R Pr(A_{jr}) \space$ el valor: $ Pr(A_j)* min(-\log Pr(A_{jr}))$, y de la desigualdad anterior deducimos: 
+$$ -Pr(A_j)\log Pr(A_j) < \sum_r^R - Pr(A_jr)\log   Pr(A_{jr}) $$
 
 Como los intervalos $A_{jr}$ son conjuntos del total, podemos ver que aumentan las entroía de la fuente, esto es lógico ya que se agregas mas "opciones" cada una con menos probabilidad (mayor informacion).
 De esto podemos intuir, que la entropía de la fuente discreta obtenida, aumenta con el número de sucesivas divisiones realizadas, no necesariamente el numero de intervalos tomados. Es posible demostrar que no existe un límite para este valor.
@@ -60,7 +60,7 @@ Es interesante señalar, que disponer de mas intervalos siempre aumenta la canti
 
 No es cierto, en general, que dividir un intervalo mas probable aumente menos la entropía que dividir uno menos probable. Ya que podemos hacer este crecimiento arbitrariametne grande tomando algun sub-intervalo lo suficientemente pequeño.
 
-Supongamos, sin embargo que dividimos 2 sub-intervalos $A$ y $B$, de forma tal que para cualquier $A_j$ o $B_j$ la probabilidad sea un valor $P$. Tal número P no es arbitrario, ya que debe satisfacer el hecho de que $P * N_a  = Pr(A)$, con $N_a$ entero, lo mismo para $B$, de acá se deduce que $Pr(A)/Pr(B)$ debe ser un numero *racional*. Lo que si es cierto es que se puede tomar un valor arbitrariamente chico. Además si consideramos que la densidad de probabilidad es no-nula esta división será única. Para esto podemos pensar en que desde el comienzo del intervalo la probabilidad será creciente a medida que movemos el extremo final del sub-intervalo, una vez que alcancemos el valor P, este sub-intervalo será el único posible (Que empiece donde el grande y tenga probabilidad P). Podemos repetir este proceso hasta completar todo el intervalo original.
+Supongamos, sin embargo que dividimos 2 sub-intervalos $A$ y $B$, de forma tal que para cualquier $A_j$ o $B_j$ la probabilidad sea un valor $P$. Tal número P no es arbitrario, ya que debe satisfacer el hecho de que $P * N_a  = Pr(A)$, con $N_a$ entero, lo mismo para $B$, de acá se deduce que $Pr(A)/Pr(B)$ debe ser un numero *racional* (o no?). Lo que si es cierto es que se puede tomar un valor arbitrariamente chico. Además si consideramos que la densidad de probabilidad es no-nula esta división será única. Para esto podemos pensar en que desde el comienzo del intervalo la probabilidad será creciente a medida que movemos el extremo final del sub-intervalo, una vez que alcancemos el valor P, este sub-intervalo será el único posible (Que empiece donde el grande y tenga probabilidad P). Podemos repetir este proceso hasta completar todo el intervalo original.
 
 Sabiendo que $Pr(A) < Pr(B) \Rightarrow N_a < N_b$ 
 
@@ -101,7 +101,7 @@ Intuitivamente  interesará dividir los intervalos mas probables. Esto hará que
 * Los intervalos mas probables intervienen mas en el error esperado, ya que habrá menos diferencia en los valores mas esperados.
 * Aunque dependerá de nuestra forma de dividir, podríamos esperar aumentar menos la entropía de esta forma
 
-Sin embargo, es de gran interés desarrollar un criterio para determinar estos intervalos, dados un error cuadrático medio deseado y una pdf  $f(x)$.
+Sin embargo, es de gran interés desarrollar un criterio para determinar estos intervalos (al menos la cantidad), dados un error cuadrático medio deseado y una pdf  $f(x)$.
 
  Si seguimos nuestra primera intuicion podemos pensar que las funciones que tengan ciertos intervalos muy probables (o equivalentemente, intervalos muy improbables) nos van a permitir *cuantizarlas* con menos entropía. Esto es porque los valores de la fuetne discreta estarán mas *concentrados* en la medida que los de la fuente analogica lo esten. 
 
@@ -111,10 +111,14 @@ Sin embargo, es de gran interés desarrollar un criterio para determinar estos i
 
  $$ E = -\int_{-\infty}^\infty f(x) \log f(x) dx $$
 
+ #### Entropia de un cuantizador uniforme 
+
+ Si tenemos un cuantizador 
+
 
 ### Referencias
 [1] 
 
 [2] Gallager, R. G. (1968). Information theory and reliable communication (pp. 59-75). Wiley.
 
-[3] Gallager, R. G. (1968). Information theory and reliable communication (p. 69). Wiley.
+[3] Gallager, R. G. (1968). Information theory and reliable communication (pp. 69-70). Wiley.
